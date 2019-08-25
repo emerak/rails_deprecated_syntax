@@ -8,6 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'stephaniacernas@gmail.com'
   s.files       = ['lib/rails_deprecated_syntax.rb']
   s.homepage    =
-    'https://rubygems.org/gems/rails_deprecated_syntax'
+    'https://github.com/emerak/rails_deprecated_syntax'
   s.license       = 'MIT'
 end

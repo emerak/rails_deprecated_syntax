@@ -10,7 +10,7 @@ class RailsDeprecatedSyntax
     'skip_action_callback'=> 'Deprecated AbstractController#skip_action_callback in favor of individual skip_callback methods.',
     'render[[:space:]]nothing'=> 'Deprecated :nothing option for render method',
     'render[[:space:]]\:nothing'=> 'Deprecated :nothing option for render method',
-    'redirect_to[[:space:]]:back '=> 'Deprecated redirect_to :back in favor of redirect_back',
+    'redirect_to[[:space:]]:back'=> 'Deprecated redirect_to :back in favor of redirect_back',
     'table_exists?'=> 'Deprecated table_exists? - The #table_exists? method would check both tables and views.',
     'add_on_empty'=> 'Deprecated ActiveModel::Errors#add_on_empty and ActiveModel::Errors#add_on_blank with no replacement.',
     'add_on_blank'=> 'Deprecated ActiveModel::Errors#add_on_empty and ActiveModel::Errors#add_on_blank with no replacement.',
@@ -21,7 +21,7 @@ class RailsDeprecatedSyntax
   def self.check_deprecations
     @report = {}
     DEPRECATIONS.each_pair do |k, v|
-      result = `grep -nr  --exclude-dir=tmp #{k} .`
+      result = `git grep -nr #{k} .`
       next if result.empty?
 
       puts "---------------------------------------------------------------------\n"

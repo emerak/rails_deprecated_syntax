@@ -1,0 +1,3 @@
+before_filter :foo
+after_filter :foo
+around_filter :foo

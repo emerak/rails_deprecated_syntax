@@ -10,6 +10,6 @@ desc 'Run tests'
 task :default => :test
 
 desc 'Run deprecation finder'
-task :check_deprecations do |task, args|
-  RailsDeprecatedSyntax.check_deprecations(args)
+task :show_deprecations do |task, args|
+  RailsDeprecatedSyntax.show_deprecations(args)
 end

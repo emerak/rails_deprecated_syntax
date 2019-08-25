@@ -18,14 +18,24 @@ class RailsDeprecatedSyntax
     'alias_method_chain'=> 'Deprecated alias_method_chain in favour of Module#prepend introduced in Ruby 2.0',
   }.freeze
 
-  def self.check_deprecations
-    @report = {}
-    DEPRECATIONS.each_pair do |k, v|
-      result = `git grep -nr #{k} .`
+  @report = ''
+
+  def self.check_deprecations(path)
+    path = path ? " -- #{path}" : '.'
+
+    DEPRECATIONS.map do |k, v|
+      result = `git grep -nr #{k} #{path}`
       next if result.empty?
 
-      puts "---------------------------------------------------------------------\n"
-      puts "#{result} #{v}"
+      @report.concat("---------------------------------------------------------------------\n")
+      @report.concat("#{v}\n")
+      @report.concat("#{result}\n")
     end
+
+    @report
+  end
+
+  def self.show_deprecations(path)
+    puts self.check_deprecations(path)
   end
 end

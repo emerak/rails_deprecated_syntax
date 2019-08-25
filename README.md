@@ -14,12 +14,12 @@ Install it in your project
 Create a Rake task
 ```
   require 'rails_deprecated_syntax'
-  task :check_deprecations do
-    RailsDeprecatedSyntax.check_deprecations
+  task :show_deprecations do
+    RailsDeprecatedSyntax.show_deprecations
   end
 ```
 
 Call the rake task in a terminal
 ```
-  rake check_deprecations
+  rake show_deprecations
 ```

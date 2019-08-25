@@ -5,8 +5,8 @@ class RailsDeprecatedSyntax
   DEPRECATIONS = {
     'config.static_cache_control'=> 'Deprecated config.static_cache_control in favor of config.public_file_server.headers',
     'config.serve_static_files'=> 'Deprecated config.serve_static_files in favor of config.public_file_server.enabled',
-    '*_filter'=> 'Deprecated all *_filter callbacks in favor of *_action callbacks',
-    '*_via_redirect'=> 'Deprecated *_via_redirect integration test methods. Use follow_redirect! manually after the request call for the same behavior',
+    '_filter'=> 'Deprecated all *_filter callbacks in favor of *_action callbacks',
+    '_via_redirect'=> 'Deprecated *_via_redirect integration test methods. Use follow_redirect! manually after the request call for the same behavior',
     'skip_action_callback'=> 'Deprecated AbstractController#skip_action_callback in favor of individual skip_callback methods.',
     'render[[:space:]]nothing'=> 'Deprecated :nothing option for render method',
     'render[[:space:]]\:nothing'=> 'Deprecated :nothing option for render method',
@@ -25,7 +25,7 @@ class RailsDeprecatedSyntax
       next if result.empty?
 
       puts "---------------------------------------------------------------------\n"
-      puts result
+      puts "#{result} #{v}"
     end
   end
 end

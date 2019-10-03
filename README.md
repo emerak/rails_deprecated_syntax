@@ -11,15 +11,7 @@ Install it in your project
   gem install rails_deprecated_syntax
 ```
 
-Create a Rake task
+In a console, run
 ```
-  require 'rails_deprecated_syntax'
-  task :show_deprecations do
-    RailsDeprecatedSyntax.show_deprecations
-  end
-```
-
-Call the rake task in a terminal
-```
-  rake show_deprecations
+  bundle exec check_deprecations
 ```

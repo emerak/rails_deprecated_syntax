@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'rails_deprecated_syntax/cli'
+
+RailsDeprecatedSyntax::Cli.start(ARGV.last)
